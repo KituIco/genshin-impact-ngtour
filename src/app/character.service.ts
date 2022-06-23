@@ -28,7 +28,7 @@ export class CharacterService {
     };
   }
 
-  /** GET heroes from the server */
+  /** GET Characters from the server */
   getCharacters(): Observable<Character[]> {
     return this.http.get<Character[]>(this.charactersUrl)
       .pipe(
@@ -36,28 +36,23 @@ export class CharacterService {
       );
   }
 
-  // /** GET hero by id. Return `undefined` when id not found */
-  // getHeroNo404<Data>(id: number): Observable<Hero> {
-  //   const url = `${this.heroesUrl}/?id=${id}`;
-  //   return this.http.get<Hero[]>(url)
-  //     .pipe(
-  //       map(heroes => heroes[0]), // returns a {0|1} element array
-  //       tap(h => {
-  //         const outcome = h ? 'fetched' : 'did not find';
-  //         this.log(`${outcome} hero id=${id}`);
-  //       }),
-  //       catchError(this.handleError<Hero>(`getHero id=${id}`))
-  //     );
-  // }
+  /** GET Character by id. Return `undefined` when id not found */
+  getHeroNo404<Data>(id: string): Observable<Character> {
+    const url = `${this.charactersUrl}/?id=${id}`;
+    return this.http.get<Character[]>(url)
+      .pipe(
+        map(characters => characters[0]), // returns a {0|1} element array
+        catchError(this.handleError<Character>(`getCharacter id=${id}`))
+      );
+  }
 
-  // /** GET hero by id. Will 404 if id not found */
-  // getHero(id: number): Observable<Hero> {
-  //   const url = `${this.heroesUrl}/${id}`;
-  //   return this.http.get<Hero>(url).pipe(
-  //     tap(_ => this.log(`fetched hero id=${id}`)),
-  //     catchError(this.handleError<Hero>(`getHero id=${id}`))
-  //   );
-  // }
+  /** GET hero by id. Will 404 if id not found */
+  getHero(id: string): Observable<Character> {
+    const url = `${this.charactersUrl}/${id}`;
+    return this.http.get<Character>(url).pipe(
+      catchError(this.handleError<Character>(`getCharacter id=${id}`))
+    );
+  }
 
   // /* GET heroes whose name contains search term */
   // searchHeroes(term: string): Observable<Hero[]> {

@@ -1,6 +1,7 @@
 nav{
     padding: 12px;
 }
+
 span{
     font-size: 150%;
 }
@@ -19,4 +20,8 @@ a{
 a:hover{
     color:#000000;
     font-weight: bold;
+}
+
+a:active {
+    color: #6e5800;
 }
