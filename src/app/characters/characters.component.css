@@ -37,6 +37,7 @@
   text-transform: uppercase;
   text-align: center;
   color:#ffffff;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
 .jumbotron .container {
@@ -67,11 +68,45 @@ footer a{
   -webkit-box-orient: vertical;
   white-space: normal;
   font-size: 85%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-h5 {
-    margin:0;
-    
+.card-link{
+  text-decoration: none;
+  color:black;
+}
+
+.card-link h5{
+  font-weight: bold;
+  margin:0;
+  font-family: Verdana, sans-serif;   
+}
+
+.card-link:hover{
+  opacity: 0.8;
+}
+
+.card:hover{
+  box-shadow: 1px 8px 20px grey;
+}
+
+.card-link:hover .bold-hover{
+  font-weight: bolder;
+}
+
+.card-link:hover h5{
+  color:#ffd000;
+  font-size: 135%;
+  letter-spacing: 1px;
+}
+
+.card-link:hover .img-fluid{
+  opacity: 0.6;
+}
+
+.card-link:hover .img-right{
+  transform: scale(1.3);
+  opacity: 2;
 }
 
 .card-title{

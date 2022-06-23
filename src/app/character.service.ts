@@ -37,7 +37,7 @@ export class CharacterService {
   }
 
   /** GET Character by id. Return `undefined` when id not found */
-  getHeroNo404<Data>(id: string): Observable<Character> {
+  getCharacterNo404<Data>(id: string): Observable<Character> {
     const url = `${this.charactersUrl}/?id=${id}`;
     return this.http.get<Character[]>(url)
       .pipe(
@@ -47,7 +47,7 @@ export class CharacterService {
   }
 
   /** GET hero by id. Will 404 if id not found */
-  getHero(id: string): Observable<Character> {
+  getCharacter(id: string): Observable<Character> {
     const url = `${this.charactersUrl}/${id}`;
     return this.http.get<Character>(url).pipe(
       catchError(this.handleError<Character>(`getCharacter id=${id}`))

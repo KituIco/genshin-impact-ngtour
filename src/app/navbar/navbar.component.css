@@ -3,7 +3,9 @@ nav{
 }
 
 span{
-    font-size: 150%;
+    font-size: 140%;
+    font-weight: bold;
+    font-family: 'Tahoma', Verdana, sans-serif;
 }
 
 li{
@@ -15,6 +17,7 @@ a{
     color:rgb(62, 42, 3);
     letter-spacing: 1px;
     font-size: 105%;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
 a:hover{
