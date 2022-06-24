@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
     name: 'Weapons'
   },
   {
-    path: '/Artifacts',
+    path: '/artifacts',
     name: 'Artifacts'
   }]
   constructor() { }

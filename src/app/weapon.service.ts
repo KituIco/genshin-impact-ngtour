@@ -28,7 +28,7 @@ export class WeaponService {
     };
   }
 
-  /** GET Characters from the server */
+  /** GET Weapons from the server */
   getWeapons(): Observable<Weapon[]> {
     return this.http.get<Weapon[]>(this.weaponsUrl)
       .pipe(
@@ -36,18 +36,18 @@ export class WeaponService {
       );
   }
 
-  /** GET Character by id. Return `undefined` when id not found */
-  getCharacterNo404<Data>(id: string): Observable<Weapon> {
+  /** GET Weapon by id. Return `undefined` when id not found */
+  getWeaponNo404<Data>(id: string): Observable<Weapon> {
     const url = `${this.weaponsUrl}/?id=${id}`;
     return this.http.get<Weapon[]>(url)
       .pipe(
-        map(characters => characters[0]), // returns a {0|1} element array
+        map(weapons => weapons[0]), // returns a {0|1} element array
         catchError(this.handleError<Weapon>(`getWeapon id=${id}`))
       );
   }
 
-  /** GET hero by id. Will 404 if id not found */
-  getCharacter(id: string): Observable<Weapon> {
+  /** GET weapoin by id. Will 404 if id not found */
+  getWeapon(id: string): Observable<Weapon> {
     const url = `${this.weaponsUrl}/${id}`;
     return this.http.get<Weapon>(url).pipe(
       catchError(this.handleError<Weapon>(`getWeapon id=${id}`))

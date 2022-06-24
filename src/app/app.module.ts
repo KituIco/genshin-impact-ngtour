@@ -10,6 +10,8 @@ import { CharacterDetailComponent } from './character-detail/character-detail.co
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { WeaponsComponent } from './weapons/weapons.component';
 import { WeaponDetailComponent } from './weapon-detail/weapon-detail.component';
+import { ArtifactsComponent } from './artifacts/artifacts.component';
+import { ArtifactDetailComponent } from './artifact-detail/artifact-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { WeaponDetailComponent } from './weapon-detail/weapon-detail.component';
     CharacterDetailComponent,
     DashboardComponent,
     WeaponsComponent,
-    WeaponDetailComponent
+    WeaponDetailComponent,
+    ArtifactsComponent,
+    ArtifactDetailComponent
   ],
   imports: [
     BrowserModule,
