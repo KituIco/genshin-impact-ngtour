@@ -4,6 +4,8 @@ import { Location } from '@angular/common';
 
 import { Character } from '../character';
 import { CharacterService } from '../character.service';
+import { Constellation } from '../constellation';
+import { Talent } from '../talent';
 
 @Component({
   selector: 'app-character-detail',
@@ -13,6 +15,8 @@ import { CharacterService } from '../character.service';
 export class CharacterDetailComponent implements OnInit {
 
   character: Character | undefined;
+  constellations: Constellation[] = []; 
+  talents: Talent[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -21,25 +25,34 @@ export class CharacterDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getHero();
+    this.getCharacter();
+    this.getConstellations();
+    this.getTalents();
   }
 
-  getHero(): void {
+  getCharacter(): void {
     const id = this.route.snapshot.paramMap.get('id')
     if(id)
       this.characterService.getCharacter(id)
         .subscribe(character => this.character = character);
   }
 
+  getConstellations(): void {
+    const id = this.route.snapshot.paramMap.get('id')
+    if(id)
+      this.characterService.getConstellations(id)
+        .subscribe( constellations => this.constellations = constellations);
+  }
+
+  getTalents(): void {
+    const id = this.route.snapshot.paramMap.get('id')
+    if(id)
+      this.characterService.getTalents(id)
+        .subscribe( talents => this.talents = talents);
+  }
+
   goBack(): void {
     this.location.back();
   }
-
-  // save(): void {
-  //   if (this.hero) {
-  //     this.characterService.updateHero(this.hero)
-  //       .subscribe(() => this.goBack());
-  //   }
-  // }
 
 }

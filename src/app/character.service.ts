@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Cons, Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Character } from './character';
+import { Constellation } from './constellation';
+import { Talent } from './talent';
 
 @Injectable({ providedIn: 'root' })
 export class CharacterService {
@@ -53,6 +55,21 @@ export class CharacterService {
       catchError(this.handleError<Character>(`getCharacter id=${id}`))
     );
   }
+
+  getConstellations(id: string): Observable<Constellation[]> {
+    const url = `${this.charactersUrl}/${id}/constellations`;
+    return this.http.get<Constellation[]>(url).pipe(
+      catchError(this.handleError<Constellation[]>(`getConstellations id=${id}`))
+    );
+  }
+
+  getTalents(id: string): Observable<Talent[]> {
+    const url = `${this.charactersUrl}/${id}/talents`;
+    return this.http.get<Talent[]>(url).pipe(
+      catchError(this.handleError<Talent[]>(`getTalents id=${id}`))
+    );
+  }
+
 
   // /* GET heroes whose name contains search term */
   // searchHeroes(term: string): Observable<Hero[]> {
