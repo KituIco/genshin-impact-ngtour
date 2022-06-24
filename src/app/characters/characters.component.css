@@ -72,6 +72,10 @@ footer a{
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.weapon-element{
+  font-weight: 100;
+}
+
 .card-link{
   text-decoration: none;
   color:black;

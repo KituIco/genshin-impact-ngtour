@@ -48,7 +48,7 @@ export class CharacterService {
       );
   }
 
-  /** GET hero by id. Will 404 if id not found */
+  /** GET Character by id. Will 404 if id not found */
   getCharacter(id: string): Observable<Character> {
     const url = `${this.charactersUrl}/${id}`;
     return this.http.get<Character>(url).pipe(
