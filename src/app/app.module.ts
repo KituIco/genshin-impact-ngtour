@@ -8,6 +8,8 @@ import { CharactersComponent } from './characters/characters.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { WeaponsComponent } from './weapons/weapons.component';
+import { WeaponDetailComponent } from './weapon-detail/weapon-detail.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CharactersComponent,
     NavbarComponent,
     CharacterDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    WeaponsComponent,
+    WeaponDetailComponent
   ],
   imports: [
     BrowserModule,

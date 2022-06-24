@@ -3,7 +3,7 @@
   
   <section class="jumbotron text-center vertical-center">
     <div class="container" id="top">
-      <h1 class="jumbotron-heading">Characters</h1>
+      <h1 class="jumbotron-heading" style="font-weight:600">Characters</h1>
     </div>
   </section>
 
@@ -15,7 +15,7 @@
         <div *ngFor="let character of characters" class="col-lg-4 col-md-6 col-sm-12">
           
           <a class="card-link" routerLink="/characters/{{character.id}}">
-          <div class="card mb-3" style="max-width: 540px; background-color:rgb(252, 250, 248);">
+          <div class="card mb-3" style="background-color:rgb(252, 250, 248);">
             <div class="row g-0">
               <div class="col-4">
                 <img src="{{character.squareCard}}" class="img-fluid rounded-start" >
