@@ -12,6 +12,8 @@ import { WeaponsComponent } from './weapons/weapons.component';
 import { WeaponDetailComponent } from './weapon-detail/weapon-detail.component';
 import { ArtifactsComponent } from './artifacts/artifacts.component';
 import { ArtifactDetailComponent } from './artifact-detail/artifact-detail.component';
+import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { ArtifactDetailComponent } from './artifact-detail/artifact-detail.compo
     WeaponsComponent,
     WeaponDetailComponent,
     ArtifactsComponent,
-    ArtifactDetailComponent
+    ArtifactDetailComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

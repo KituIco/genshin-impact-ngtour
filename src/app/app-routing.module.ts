@@ -6,6 +6,7 @@ import { WeaponsComponent } from './weapons/weapons.component';
 import { WeaponDetailComponent } from './weapon-detail/weapon-detail.component';
 import { ArtifactsComponent } from './artifacts/artifacts.component';
 import { ArtifactDetailComponent } from './artifact-detail/artifact-detail.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: 'characters', component: CharactersComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'weapons/:id', component: WeaponDetailComponent },
   { path: 'artifacts', component: ArtifactsComponent },
   { path: 'artifacts/:id', component: ArtifactDetailComponent },
+  { path: 'search/:searchTerm', component:SearchComponent },
 ];
 
 @NgModule({
