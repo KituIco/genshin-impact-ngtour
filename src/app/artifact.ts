@@ -15,6 +15,7 @@ export interface Artifact {
         fourPieceBonus: string;
     }
 }
+
 // {
 //     "id":11,
 //     "name":"Adventurer's Flower",

@@ -46,7 +46,7 @@ export class ArtifactService {
       );
   }
 
-  /** GET weapoin by id. Will 404 if id not found */
+  /** GET Artifact by id. Will 404 if id not found */
   getArtifact(id: string): Observable<Artifact> {
     const url = `${this.artifactsUrl}/${id}`;
     return this.http.get<Artifact>(url).pipe(
