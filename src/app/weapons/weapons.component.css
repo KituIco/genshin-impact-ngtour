@@ -160,3 +160,10 @@ footer a{
   font-size: 120%;
   font-weight: 300;
 }
+
+.div-nothing{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 60%;
+  left: 50%;
+}

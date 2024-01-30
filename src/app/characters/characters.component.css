@@ -161,3 +161,10 @@ footer a{
   object-fit: cover;
   background-image: linear-gradient(to bottom right, rgb(160,121,81), rgb(218,163,79));
 }
+
+.div-nothing{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 60%;
+  left: 50%;
+}
