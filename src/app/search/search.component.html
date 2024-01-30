@@ -1,0 +1,106 @@
+<div class="album py-5 bg-light">  
+    
+  <div class="container" style="min-height: 590px">
+    <div class="row">
+
+      <div *ngFor="let character of characters" class="col-lg-4 col-md-6 col-sm-12">
+          
+        <a class="card-link" routerLink="/characters/{{character.id}}">
+        <div class="card mb-3" style="background-color:rgb(252, 250, 248);">
+          <div class="row g-0">
+            <div class="col-4">
+              <img src="{{character.squareCard}}" class="img-fluid img-fluid-{{character.rarity}} rounded-start" >
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <img src="https://genshin.jmp.blue/elements/{{character.vision.toLowerCase()}}/icon" class="img-right" style="float: right">
+                  {{character.id.split("-").join(" ")}}
+                </h5>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=#ffd000 class="bi bi-star-fill" viewBox="0 0 16 16" *ngFor="let num of [].constructor(character.rarity)">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+                <p class="card-text weapon-element bold-hover">{{character.vision}} - {{character.weapon}}</p>
+                <p class="card-text text-truncate"><small class="text-muted">{{character.description}}</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </a>
+
+      </div>
+
+      <div *ngFor="let weapon of weapons" class="col-lg-4 col-md-6 col-sm-12">
+            
+        <a class="card-link" routerLink="/weapons/{{weapon.id}}">
+        <div class="card mb-3" style="background-color:rgb(252, 250, 248);">
+          <div class="row g-0">
+            <div class="col-4">
+              <img src="{{weapon.image}}" class="img-fluid img-fluid-{{weapon.rarity}} rounded-start" onerror="this.src='https://genshin.jmp.blue/weapons/redhorn-stonethresher/icon'">
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <!-- <img src="https://impact.moe/assets/img/element-icons/{{character.vision.toLowerCase()}}-icon.webp" class="img-right" style="float: right"> -->
+                  {{weapon.name}}
+                </h5>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=#ffd000 class="bi bi-star-fill" viewBox="0 0 16 16" *ngFor="let num of [].constructor(weapon.rarity)">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+                <p class="card-text bold-hover">Base ATK: <span class="weapon-value bold-hover">{{weapon.baseAttack}}</span></p>
+                <!-- <p class="card-text text-truncate"><small class="text-muted">{{character.description}}</small></p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        </a>
+
+      </div>
+
+      <div *ngFor="let artifact of artifacts" class="col-lg-4 col-md-6 col-sm-12">
+            
+        <a class="card-link" routerLink="/artifacts/{{artifact.id}}">
+        <div class="card mb-3" style="background-color:rgb(252, 250, 248);">
+          <div class="row g-0">
+            <div class="col-4">
+              <img src={{artifact.image}} class="img-fluid img-fluid-{{artifact.max_rarity}} rounded-start" >
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{artifact.name}}
+                </h5>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=#ffd000 class="bi bi-star-fill" viewBox="0 0 16 16" *ngFor="let num of [].constructor(artifact.max_rarity)">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+                <p class="card-text bold-hover">{{artifact['1-piece_bonus']}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="div-nothing" *ngIf="artifacts.length==0 && weapons.length==0 && characters.length==0">
+    <img src="{{paimon}}" style="float: center">
+    <p style="font-weight:100; font-size: 135%; text-align: center;">{{done}}</p>
+  </div>
+
+</div>
+
+<footer class="text-muted bg-dark">
+    <div class="container">
+      <p class="float-right" style="font-weight:100">
+        <a href="/">Back to Home</a>
+      </p>
+      <p style="font-weight:100">
+        All data of Genshin Impact DB is obtained from Impact API - an open-source and easy-to-use repository! <br>
+        To explore more on Impact API, visit their github repository at <a href="https://genshin.dev/">genshin.dev</a>.
+      </p>
+    </div>
+</footer>
+  

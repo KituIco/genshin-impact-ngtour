@@ -1,0 +1,48 @@
+.img-mascot{
+    max-height:480px;
+    margin-left:15%;
+    margin-top:50px;
+    margin-bottom:70px;
+    display: block;
+}
+
+
+.home-body{
+    margin-bottom: 50px;
+}
+
+.home-link{
+    color:#ffd000;
+    font-weight: 500;
+}
+
+.home-header{
+    font-weight: 800;
+    padding-right: 10%;
+}
+
+.home-content{
+    font-weight: 200;
+    padding-right: 10%;
+}
+
+.contents{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+  
+footer p {
+    margin-bottom: .25rem;
+    color: #ffffff;
+}
+  
+footer a{
+    color:#ffd000;
+    letter-spacing: 1px;
+    font-size: 105%;
+}

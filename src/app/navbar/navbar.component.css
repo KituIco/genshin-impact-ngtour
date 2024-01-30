@@ -1,0 +1,30 @@
+nav{
+    padding: 12px;
+}
+
+span{
+    font-size: 140%;
+    font-weight: bold;
+    font-family: 'Tahoma', Verdana, sans-serif;
+}
+
+li{
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+a{
+    color:rgb(62, 42, 3);
+    letter-spacing: 1px;
+    font-size: 105%;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+a:hover{
+    color:#000000;
+    font-weight: bold;
+}
+
+a:active {
+    color: #6e5800;
+}
